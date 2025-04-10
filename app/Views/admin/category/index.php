@@ -24,6 +24,7 @@
                 <strong class="font-bold"><?= session()->getFlashdata('pesan') ?></strong>
             </div>
             <?php endif; ?>
+            <!--  -->
 
             <div class="overflow-x-auto shadow-md rounded-md">
                 <div class="inline-block min-w-full align-middle">
@@ -66,6 +67,7 @@
 
                         <!-- Pagination -->
                         <?= $pager->links() ?>
+                        <!--  -->
 
                     </div>
                 </div>

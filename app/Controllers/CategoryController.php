@@ -39,7 +39,7 @@ class CategoryController extends BaseController
 
     public function save()
     {
-        // Validate input
+        // Validate Input
         helper(['form']);
 
         $rules = [

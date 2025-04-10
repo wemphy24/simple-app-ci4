@@ -2,24 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Models\Product;
+
 class ProductController extends BaseController
 {
     public function index()
     {
+        $productModel = new Product();
+        $products = $productModel->select('products.id, products.name, products.price, categories.name')
+            ->join('categories', 'categories.id = products.category_id')
+            ->findAll();
+
         $data = [
             'title' => 'Product',
-            'products' => [
-                [
-                    'name' => 'Apple Macbook',
-                    'category_name' => 'Macbook',
-                    'price' => 15000000,
-                ],
-                [
-                    'name' => 'Ipad Pro',
-                    'category_name' => 'Ipad',
-                    'price' => 10000000,
-                ],
-            ]
+            'products' => $products,
         ];
 
         return view('admin/product/index', $data);

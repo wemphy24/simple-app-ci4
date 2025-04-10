@@ -19,11 +19,15 @@
                     <div class="w-full p-2 rounded-md border border-gray-600 focus-within:border-2 focus-within:border-solid">
                         <input name="name" class="outline-none w-full" type="text" placeholder="Category Name" autofocus required>
                     </div>
+
+                    <!-- Error Validation -->
                     <?php if (isset($validation)): ?>
                         <div style="color: red;">
                             <?= $validation->listErrors() ?>
                         </div>
                     <?php endif; ?>
+                    <!--  -->
+                    
                     <div class="flex items-center justify-end mt-4">
                         <button type="submit" class="cursor-pointer py-2 px-3 bg-zinc-800 text-white rounded-md text-center">Create</button>
                     </div>
